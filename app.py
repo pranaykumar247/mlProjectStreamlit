@@ -21,7 +21,7 @@ from sklearn.naive_bayes import GaussianNB
 from sklearn.svm import SVC 
 
 def main():
-    st.set_page_config(page_title = "CAPM",
+    st.set_page_config(page_title = "ML App",
     page_icon = "chart_with_upwards_trend",
     layout = 'wide')
     st.set_option('deprecation.showPyplotGlobalUse', False)
@@ -57,6 +57,7 @@ def main():
         color: red;
         text-decoration: underline;
     }
+    
 </style>
 """
     st.markdown(css_style, unsafe_allow_html=True)  # Apply inline CSS
@@ -88,8 +89,10 @@ def main():
             
             col1,col2 = st.columns([1,1])
             with col1:
+                st.text("DataFrame Head")
                 st.dataframe(df.head())
             with col2:
+                st.text("Dataframe Tail")
                 st.dataframe(df.tail())
             
             if st.checkbox("Show shape"):
@@ -131,8 +134,10 @@ def main():
             
             col1,col2 = st.columns([1,1])
             with col1:
+                st.text("DataFrame Head")
                 st.dataframe(df.head())
             with col2:
+                st.text("DataFrame Tail")
                 st.dataframe(df.tail())
                 
             if st.checkbox("Correlation with Seaborn"):
@@ -219,8 +224,10 @@ def main():
             
             col1,col2 = st.columns([1,1])
             with col1:
+                st.text("DataFrame Head")
                 st.dataframe(df.head())
             with col2:
+                st.text("DataFrame Tail")
                 st.dataframe(df.tail())
                 
             # Select only numerical columns
